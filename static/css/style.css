@@ -17,3 +17,8 @@
 .bg-dark {
     background-color: #445261;
 }
+
+.btn-signup {
+    background-color: #23BBBB;
+    color: #fff;
+}
