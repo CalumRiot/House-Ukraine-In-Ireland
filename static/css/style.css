@@ -22,3 +22,9 @@
     background-color: #23BBBB;
     color: #fff;
 }
+
+.btn-like {
+    color: #e72005;
+    border: none;
+    background: transparent;
+}
