@@ -1,24 +1,30 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Ukraine In Ireland</title>
     <!--Font Awesome Link-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/230466eaa1.js" crossorigin="anonymous"></script>
     <!--Bootstrap CSS Link-->
-    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/quartz/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/quartz/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
     <!--style.css Link-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
     <!--Navigation Menu-->
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">House<span class="home-blue">Ukr</span><span class="home-yellow">aine</span>In<span class="home-green">Ire</span><span class="home-orange">land</span></a>
-            <a href="https://www.standwithukraine.how/" target="_blank"><img class="stand-with-ukraine rounded-float-right" src="/static/images/stand-with-ukraine.png"></a>
+            <a class="navbar-brand" href="{% url 'home' %}">House<span class="home-blue">Ukr</span><span
+                    class="home-yellow">aine</span>In<span class="home-green">Ire</span><span
+                    class="home-orange">land</span></a>
+            <a href="https://www.standwithukraine.how/" target="_blank"><img
+                    class="stand-with-ukraine rounded-float-right" src="/static/images/stand-with-ukraine.png"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -55,9 +61,14 @@
     </main>
 
     <!--Footer-->
-    <footer class="footer mt-auto py-3 bg-dark">
-        <p class="m-0 text-center text-white">this site is for educational purposes only</p>
+    <footer class="footer mt-auto py-3 bg-dark row">
+        <p class="d-flex col justify-content-around text-white">This Site Is For Educational Purposes Only</p>
+        <p class="d-flex col justify-content-around text-white">Our Facebook:<a href="facebook.com" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>Our Instagram:<a href="instagram.com" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a></p>
+        <p class="d-flex col justify-content-around text-white ">&copy;Copyright CalumRiot</p>
     </footer>
 
 </body>
+
 </html>
