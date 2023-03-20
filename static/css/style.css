@@ -28,3 +28,8 @@
     border: none;
     background: transparent;
 }
+
+.stand-with-ukraine {
+    max-height: 40px;
+    max-width: 240px;
+}
