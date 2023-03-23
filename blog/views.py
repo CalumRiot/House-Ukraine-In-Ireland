@@ -88,14 +88,15 @@ class PostAbout(generic.ListView):
 
 
 class PostUser(View):
-    def post_user(request):
-        if request.method == 'POST':
-            form = PostForm(request.POST)
-            if form.is_valid():
-                post = form.save(commit=False)
-                post.user = request.user
-                post.save()
-                return redirect('home')
-        else:
-            form = PostForm()
-        return render(request, 'post_user.html', {'form': form})
+    def get(self, request):
+        form = PostForm()
+        return render(request, 'post_user.html', {'post_form': form})
+        
+    def post(self, request):
+        post = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+            return redirect('home')
+        return render(request, 'post_user.html', {'post_form': form})
