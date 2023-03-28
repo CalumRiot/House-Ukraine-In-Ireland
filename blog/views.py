@@ -14,7 +14,7 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
-class PostDetail(View):
+class PostDetail(generic.DeleteView):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -87,16 +87,7 @@ class PostAbout(generic.ListView):
     template_name = 'about.html'
 
 
-class PostUser(View):
-    def get(self, request):
-        form = PostForm()
-        return render(request, 'post_user.html', {'post_form': form})
-        
-    def post(self, request):
-        post = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.user = request.user
-            post.save()
-            return redirect('home')
-        return render(request, 'post_user.html', {'post_form': form})
+class UserPostView(View):
+    model = Post
+    fields = ['title', 'author', 'content', 'featured_image']
+    template_name = 'post-user.html'
