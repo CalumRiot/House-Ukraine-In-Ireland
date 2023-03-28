@@ -6,7 +6,7 @@
 <div class="card-header">Create a Post:</div>
 <div class="card-body">
 <p class="card-title">Posting as: {{ user.username }}</p>
-<form method="post" style="margin-top: 1.3em;">
+<form method="POST" style="margin-top: 1.3em;">
     {{ post_form | crispy }}
     {% csrf_token %}
     <button type="submit" class="btn btn-signup btn-lg">Submit</button>

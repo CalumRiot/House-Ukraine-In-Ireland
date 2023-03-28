@@ -81,22 +81,24 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class PostAbout(generic.ListView):
+class PostAbout(View):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'about.html'
 
 
-class PostUser(View):
-    def get(self, request):
+class PostUser(generic.ListView):
+    def get(self, request, *args, **kwargs):
         form = PostForm()
         return render(request, 'post_user.html', {'post_form': form})
-        
-    def post(self, request):
-        post = PostForm(request.POST)
+    
+    def post(self, request, *args, **kwargs):
+        form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.user = request.user
+            post.author = request.user  
             post.save()
-            return redirect('home')
+            
+            return render(request, 'post_user.html', {'post_form': PostForm()})
+        
         return render(request, 'post_user.html', {'post_form': form})
