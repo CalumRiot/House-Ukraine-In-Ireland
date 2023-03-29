@@ -82,15 +82,14 @@ class PostLike(View):
 
 
 class PostAbout(View):
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'about.html'
+    def about(request):
+        return render(request, 'about.html')
 
 
 class PostUser(generic.ListView):
     def get(self, request, *args, **kwargs):
         form = PostForm()
-        return render(request, 'post_user.html', {'post_form': form})
+        return render(request, 'post-user.html', {'post_form': form})
     
     def post(self, request, *args, **kwargs):
         form = PostForm(request.POST)
@@ -99,6 +98,6 @@ class PostUser(generic.ListView):
             post.author = request.user  
             post.save()
             
-            return render(request, 'post_user.html', {'post_form': PostForm()})
+            return render(request, 'post-user.html', {'post_form': PostForm()})
         
-        return render(request, 'post_user.html', {'post_form': form})
+        return render(request, 'post-user.html', {'post_form': form})

@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import PostList, PostAbout, PostDetail, PostLike, UserPostView
+from .views import PostList, PostAbout, PostDetail, PostLike, PostUser
 
 
 urlpatterns = [
