@@ -14,7 +14,7 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
-class PostDetail(View):
+class PostDetail(generic.DeleteView):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
