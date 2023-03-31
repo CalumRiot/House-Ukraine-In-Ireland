@@ -4,9 +4,9 @@ body {
     flex-direction: column;
   }
   
-  footer {
+footer {
     margin-top: auto;
-  }
+  }  
 
 .home-blue {
     color: #0057B7;
@@ -51,3 +51,4 @@ body {
 .fa-instagram {
     color:#d62976;
 }
+
