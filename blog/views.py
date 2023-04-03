@@ -98,7 +98,13 @@ class PostUser(generic.ListView):
             post = form.save(commit=False)
             post.author = request.user  
             post.save()
-            
+
+            # Call the `my_view` function to display a success message
+            self.my_view(request)
+
             return render(request, 'post-user.html', {'post_form': PostForm()})
         
         return render(request, 'post-user.html', {'post_form': form})
+
+    def my_view(self, request):
+        messages.success(request, 'Your Post is Awaiting Approval')

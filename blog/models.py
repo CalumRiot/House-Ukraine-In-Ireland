@@ -25,9 +25,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
-        return reverse('post_detail', args=(str(self.id)))
-
     def number_of_likes(self):
         return self.likes.count()
     
@@ -52,13 +49,3 @@ class Comment(models.Model):
     
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-
-class Profile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    profile_img = CloudinaryField('image', default='placeholder')
-    email = models.EmailField()
-    bio = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.user.username
