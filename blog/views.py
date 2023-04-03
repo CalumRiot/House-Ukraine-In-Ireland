@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from .models import Post
 from .forms import CommentForm, PostForm
@@ -108,3 +109,23 @@ class PostUser(generic.ListView):
 
     def my_view(self, request):
         messages.success(request, 'Your Post is Awaiting Approval')
+
+
+class EditPostView(LoginRequiredMixin, generic.ListView):
+    template_name = 'edit-posts.html'
+    model = Post
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(author=self.request.user)
+        return queryset
+
+
+class EditPostDetailView(LoginRequiredMixin, generic.UpdateView):
+    model = Post
+    template_name = 'edit-post.html'
+    form_class = PostForm
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
