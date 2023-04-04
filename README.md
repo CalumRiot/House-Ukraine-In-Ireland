@@ -115,6 +115,20 @@ To ensure a safe a properly functioning site user features such as comments & po
 ![Admin Post Menu](/media/images/admin-post.PNG)
 ![Admin Comment Menu](/media/images/admin-comment.PNG)
 
+
+### **Non-Implemented Features**
+Due to project time constraints not all desired features can be implemented, however this is quite normal in the development of any software related product. This is why it is crucial to ensure Agile Based Principals are followed when making any software related product to ensure that essential features are priortised over less-essential features. That being said there are still a number of features which could potentially be implemented in the future to add better value and overall functionality to the site. Listed below are just a few:
+
+- __Customisable Profile Page__
+
+To allow users to better describe who they are and what it is they are providing or seeking a customisable profile page who be a good feature to implement. This would allow users to add more of personal touch to their accounts and allow them to list details such as who they are, there current occupation, contact information and general bio information such as their name, age etc.
+
+
+- __Private Messaging Channel__
+
+Some users may want to speak to other users directly but don't want to contact them via email or phone. A private messaging channel similar to that seen on social media sites such as twitter and facebook would be a desirable feature to add to this project. It would create a new layer of functionality to the site and make it easier for users to ask more personal questions rather then leaving comments which can be seen by any other user if they simply click into a post and read the comments section.
+
+
 ## **Design**
 
 
