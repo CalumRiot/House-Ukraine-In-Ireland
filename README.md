@@ -105,7 +105,17 @@ Just like comments posts must be approved by an admin/superuser before they can 
 ![Post Approval](/media/images/post-approval.PNG)
 
 
-- __Feature 08 SuperUser Approval/Monitoring__
+- __Feature 08 Edit User Posts__
+
+Once a user has created a post they can edit it by navigating too the Edit Posts Page. This can be found by clicking the Edit Post Icon on the landing page.
+
+![Post Edit](/media/images/home-create-post.PNG)
+
+Once selected the user will be displayed with a list of all the posts that they have created on the site and can choose to edit a post by selecting it from the menu.
+
+![Select Post to Edit](/media/images/Edit%20Posts.PNG)
+
+- __Feature 09 SuperUser Approval/Monitoring__
 
 To ensure a safe a properly functioning site user features such as comments & posts have to be approved by a superuser. This can be done by navigating to the django admin panel by adding /admin to the end of home page url. Once logged in the superuser can create, edit, approve and delete posts and comments made by themselves or other users. This is done to ensure spam, hate speech or potential scams are not displayed to other users on the site. 
 
@@ -195,14 +205,88 @@ This Project Backlog can be viewed here: [CalumRiot's PP4](https://github.com/us
 
 ## **Testing**
 
+### **Browser Testing**
+
+I performed tests on various browsers to ensure that my site was cross-browser compatible. The browsers which I performed the tests on where:
+- Google Chrome Version: 111.0.5563.146
+- Firefox Browser Version: 110.0.1
+- Microsoft Edge Version: 111.0. 1661.41
+
+### **Responsiveness**
+
+I performed responsiveness tests using Chrome Developer Tools to test responsiveness on a range of monitor sizes including ultra wide 5k screens (5120 x 2880 px) and smaller width devices such as the IPhone SE (375 x 667 px).
+
+### **Validator Testing**
+
+**W3C Markup Validator:**
+
+I performed validator testing using [W3C Validator](https://validator.w3.org/) due too the django html tags I was receiving errors on my html code therefore I had to manually remove the tags to ensure they where validated correctly.
+
+![Landing Page Validation](/media/images/landing-page-validator.PNG)
+
+I received errors on my other html pages due too no head or no defined html tags at the start of each html file this is due too each html page being extended from the base.html file therefore these tags are not required and the errors can be ignored.
+
+![About Page Validation](/media/images/about-page-validator.PNG)
+
+**PEP8 CI Testing**
+
+I performed validator testing using [CI Python Linter](https://pep8ci.herokuapp.com/#) which is Code Institute's PEP8 Python Tester. After performing tests on each python file I received only whitespace and line too long errors which due to the fact that these errors do not actually affect the code I simply ignored.
+
+![Admin-py Validation](/media/images/admin-py-validator.PNG)
+
+![Models-py Validation](/media/images/models-py-validator.PNG)
+
+![Views-py Validation](/media/images/views-py-validator.PNG)
+
+![Urls-py Validation](/media/images/urls-py-validator.PNG)
+
+![Forms-py Validation](/media/images/forms-py-validator.PNG)
+
+### **Lighthouse Testing**
+
+Lighthouse Testing was performed on the site using Google Chrome Dev Tools. A test for both Desktop & Mobile Devices was performed.
+
+**Desktop Test**
+
+![Desktop Lighthouse Test](/media/images/desktop-lighthouse.PNG)
+
+**Mobile Test**
+
+![Mobile Lighthouse Test](/media/images/mobile-lighthouse.PNG)
+
+### **PyTest**
+
+I created 3 test files to test my models, views and forms.py files. I then used Pytest to run these test to see if they passed or failed. The test files are:
+
+- [test_models](/blog/test_models.py)
+- [test_views](/blog/test_views.py)
+- [test_forms](/blog/test_forms.py)
+
+### **Known Bugs**
+
+- The Edit Post Function is able to display all posts created by the user. However when attempting to edit the post and save the changes an error message will occur. The only solution to this issue at the moment is to edit user posts via the django admin panel.
+
 
 
 ## **Deployment**
-
+The Project is deployed to Heroku with the following steps being taken to deploy it:
+- Login to the [Heroku](https://id.heroku.com/login) Dashboard to access the created apps menu.
+- Select new followed by create new app.
+- Create a custom name for your app and select your current region.
+- Select Create New App.
+- Navigate to the Settings tab and select Reveal Config Vars.
+- Before completing the next 3 steps ensure you have correctly configured your DATABASE_URL & SECRET_KEY in your settings.py file storing both of these vars in your env.py for security.
+- Add a new config var called DATABASE_URL with an input of the url link.
+- Add a new config var called DISABLE_COLLECTSTATIC with an input of 1.
+- Add a new config var called SECRET_KEY with an input of the secret key you used in your env.py file.
+- Navigate to the Deploy tab and ensure your deployment method is connected to your project's GitHub Repo.
+- Ensure you have pushed your most recent project version to your GitHub Repo.
+- Ensure you have a Procfile with the following code "web: gunicorn 'projectname'.wsgi".
+- Finally select deploy branch from main at the bottom of the deploy tab.
 
 
 ## **Credits**
 
+- None of the photos listed on the site are mine all have been taken from various news pages for the educational purpose of demonstrating this project.
+- Parts of my models and views.py files have been from the CI: I think therefore I Blog Sample Walkthrough Project
 
-
-## **Acknowledgments**
