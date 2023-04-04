@@ -265,6 +265,7 @@ I created 3 test files to test my models, views and forms.py files. I then used 
 ### **Known Bugs**
 
 - The Edit Post Function is able to display all posts created by the user. However when attempting to edit the post and save the changes an error message will occur. The only solution to this issue at the moment is to edit user posts via the django admin panel.
+- Static Image Files failing to deploy to heroku.
 
 
 
