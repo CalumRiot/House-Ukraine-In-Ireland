@@ -170,7 +170,28 @@ This Project Backlog can be viewed here: [CalumRiot's PP4](https://github.com/us
 
 ## **Technologies Used**
 
+### **Languages Used**
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [JQuery](https://en.wikipedia.org/wiki/JQuery)
 
+### **Frameworks, Programs & Libraries Used**
+- [Font Awesome:](https://fontawesome.com/) Was used to add icons to give an aesthetic design to my social media links.
+- [Git:](https://en.wikipedia.org/wiki/Git) Was utilised for my Gitpod Terminal in order to add, commit and push changes made to my code to GitHub.
+- [GitHub:](https://en.wikipedia.org/wiki/GitHub) It is used as a repository for my projects code with code being pushed to GitHub via Git. My Product Backlog was also designed in GitHub's Projects.
+- [LucidChart:](https://en.wikipedia.org/wiki/Lucidchart) Was used to design my Mockups, Site Map & Enitity Relationship Diagrams.
+- [Django:](https://en.wikipedia.org/wiki/Django_(web_framework)) Was used as a framework to support the quick and secure development of this project.
+- [BootStrap:](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)) Was used to help build a responsive website more easily.
+- [Bootswatch:](https://bootswatch.com/) Was used to give my bootstrap a customised theme to help improve UX and the sites aesthetic.
+- [Gunicorn](https://gunicorn.org/) Was used as the Web Server to run Django on Heroku.
+- [dj_database_url](https://pypi.org/project/dj-database-url/) Is the library used to allow database urls to connect to the postgres db.
+- [psycopg2](https://pypi.org/project/psycopg2/) Is the database adapter used to support the connection to the postgres db.
+- [Cloudinary](https://cloudinary.com/) Was used to store the images used for the project.
+- [Summernote](https://pypi.org/project/django-summernote/) Was used to provide WYSIWYG editing for the admin create post panel.
+- [Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html) Was used for account registration and authentication.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) Was used to assist in simplifing form rendering.
+- [Jquery Library](https://en.wikipedia.org/wiki/JQuery) Was used to fade out alert messages.
 
 ## **Testing**
 
